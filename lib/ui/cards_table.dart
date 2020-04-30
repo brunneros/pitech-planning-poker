@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:planningpoker/model/deck.dart';
+import 'package:planningpoker/core/models/deck.dart';
 
 class CardsTable extends StatefulWidget {
   @override
