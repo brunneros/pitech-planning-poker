@@ -3,7 +3,7 @@ import 'package:planningpoker/core/models/deck.dart';
 import 'package:planningpoker/core/services/DeckService.dart';
 import 'package:planningpoker/locator.dart';
 
-class SideMenuModel extends ChangeNotifier {
+class DeckViewModel extends ChangeNotifier {
 
   List<Deck> _decks = [];
   List<Deck> get decks => _decks;
