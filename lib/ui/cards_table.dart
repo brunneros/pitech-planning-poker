@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:planningpoker/core/viewmodels/deck_view_model.dart';
+import 'package:planningpoker/ui/shared/pitech_colors.dart';
 
 class CardsTable extends StatefulWidget {
   final DeckViewModel model;
@@ -24,8 +25,7 @@ class CardsTableState extends State<CardsTable> {
   @override
   Widget build(BuildContext context) {
     return Container(
-//        color: Color.fromARGB(255, 73, 218, 216),
-        color: Colors.white,
+        color: PitechColors.white,
         child: GridView.count(
             crossAxisCount: 3,
             childAspectRatio: 6.5 / 9,
@@ -42,23 +42,22 @@ class CardsTableState extends State<CardsTable> {
         elevation: 1,
         borderRadius: BorderRadius.circular(5),
         child: InkWell(
-          // When the user taps the button, navigate to a named route
-          // and provide the arguments as an optional parameter.
-          onTap: () => Navigator.pushNamed(context, "showcard", arguments: value),
-          child: Container(
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: Color.fromARGB(255, 57, 170, 169),
-              shape: BoxShape.rectangle,
-              borderRadius: BorderRadius.circular(5),
-            ),
-            child: Text(value,
-                style: Theme.of(context)
-                    .textTheme
-                    .display1
-                    .copyWith(color: Colors.white)),
-          )
-        )
-    );
+            // When the user taps the button, navigate to a named route
+            // and provide the arguments as an optional parameter.
+            onTap: () =>
+                Navigator.pushNamed(context, "showcard", arguments: value),
+            child: Container(
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: PitechColors.green2,
+                shape: BoxShape.rectangle,
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Text(value,
+                  style: TextStyle(
+                      fontWeight: FontWeight.w800,
+                      color: PitechColors.white,
+                      fontSize: 50)),
+            )));
   }
 }

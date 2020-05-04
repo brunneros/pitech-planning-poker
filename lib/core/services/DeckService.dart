@@ -19,10 +19,10 @@ class DeckService {
 
   List<Deck> _getDummyDeck() {
     return [
-      Deck("Fibonacci", ["1", '3', '5', '8', '13', "21"],
-          "lib/assets/images/FibonacciSpiral.png"),
-      Deck("T-shirt", ["XS", 'S', 'M', 'L', 'XL', 'XXL'],
-          "lib/assets/images/FX13_tshirt2.png"),
+      Deck("FIBONACCI", ["1", '3', '5', '8', '13', "21"],
+          "lib/assets/images/Asset60.png"),
+      Deck("T-SHIRT", ["XS", 'S', 'M', 'L', 'XL', 'XXL'],
+          "lib/assets/images/Asset81.png"),
     ];
   }
 }

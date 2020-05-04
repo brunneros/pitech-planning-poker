@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:planningpoker/ui/shared/pitech_colors.dart';
+import 'package:planningpoker/ui/shared/pitech_theme.dart';
 import 'package:provider/provider.dart';
-
 import 'package:planningpoker/locator.dart';
 import 'package:planningpoker/router.dart';
 import 'package:planningpoker/ui/cards_table.dart';
 import 'package:planningpoker/core/viewmodels/deck_view_model.dart';
 import 'package:planningpoker/ui/side_menu.dart';
-
-
 
 void main() {
   setupLocator();
@@ -22,6 +21,7 @@ class Main extends StatefulWidget {
 class _MainAppState extends State<Main> {
 
   DeckViewModel model = locator<DeckViewModel>();
+  PitechTheme pitechTheme = PitechTheme();
 
   @override
   Widget build(BuildContext context) {
@@ -30,16 +30,18 @@ class _MainAppState extends State<Main> {
         child: Consumer<DeckViewModel>(
             builder: (context, model, child) => MaterialApp(
               debugShowCheckedModeBanner: false,
+              theme: pitechTheme.themeData,
               title: 'PitechPlus Planning Poker',
                 home: Scaffold(
                   appBar: AppBar(
                     title:  Align(
-                    alignment: Alignment.centerLeft,
-                     child: Container(
+                      alignment: Alignment.centerLeft,
+                      child: Container(
                         padding: const EdgeInsets.fromLTRB(0, 80, 80, 80),
                         child: Image.asset("lib/assets/images/logo-large.png", fit: BoxFit.cover),
-                  )),
-                    backgroundColor: Color.fromARGB(255, 51, 65, 76),
+                      )
+                    ),
+                    backgroundColor: PitechColors.green1,
                   ),
                   drawer: SideMenu(model),
                   body: CardsTable(model),
