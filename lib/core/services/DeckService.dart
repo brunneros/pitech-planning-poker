@@ -5,6 +5,7 @@ class DeckService {
   List<Deck> _decks = [];
 
   Deck get currentDeck => _currentDeck;
+
   List<Deck> get decks => _decks;
 
   set currentDeck(Deck deck) {
@@ -16,10 +17,12 @@ class DeckService {
     return _decks;
   }
 
-  List<Deck>_getDummyDeck() {
+  List<Deck> _getDummyDeck() {
     return [
-      Deck("Fibonacci", ["1", '3', '5', '8','13', '17', "21"]),
-      Deck("T-shirt", ["XS", 'S', 'M', 'L','XL', 'XXL']),
+      Deck("Fibonacci", ["1", '3', '5', '8', '13', "21"],
+          "lib/assets/images/FibonacciSpiral.png"),
+      Deck("T-shirt", ["XS", 'S', 'M', 'L', 'XL', 'XXL'],
+          "lib/assets/images/FX13_tshirt2.png"),
     ];
   }
 }

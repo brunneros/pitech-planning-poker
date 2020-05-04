@@ -1,29 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:planningpoker/locator.dart';
-import 'package:planningpoker/ui/cards_table.dart';
-import 'package:planningpoker/ui/side_menu.dart';
 import 'package:provider/provider.dart';
 
-import 'core/viewmodels/deck_view_model.dart';
+import 'package:planningpoker/locator.dart';
+import 'package:planningpoker/router.dart';
+import 'package:planningpoker/ui/cards_table.dart';
+import 'package:planningpoker/core/viewmodels/deck_view_model.dart';
+import 'package:planningpoker/ui/side_menu.dart';
+
+
 
 void main() {
   setupLocator();
-  runApp(MyApp());
+  runApp(Main());
 }
 
-class MyApp extends StatefulWidget {
+class Main extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  _MainAppState createState() => _MainAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MainAppState extends State<Main> {
   DeckViewModel model = locator<DeckViewModel>();
 
-  @override
-  void initState() {
-    model.getDecks();
-    super.initState();
-  }
+//  @override
+//  void initState() {
+////    model.getDecks();
+//    super.initState();
+//  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,13 +34,22 @@ class _MyAppState extends State<MyApp> {
         create: (context) => model,
         child: Consumer<DeckViewModel>(
             builder: (context, model, child) => MaterialApp(
-                title: 'PitechPlus Planning Poker',
+              debugShowCheckedModeBanner: false,
+              title: 'PitechPlus Planning Poker',
                 home: Scaffold(
                   appBar: AppBar(
-                    title: Text('PitechPlus Planning Poker'),
+
+                    title:  Align(
+                    alignment: Alignment.centerLeft,
+                     child: Container(
+                        padding: const EdgeInsets.fromLTRB(0, 80, 80, 80),
+                        child: Image.asset("lib/assets/images/logo-large.png", fit: BoxFit.cover),
+                  )),
+                    backgroundColor: Color.fromARGB(255, 51, 65, 76),
                   ),
                   drawer: SideMenu(model),
                   body: CardsTable(model),
-                ))));
+                ),
+                onGenerateRoute: Router.generateRoute,)));
   }
 }

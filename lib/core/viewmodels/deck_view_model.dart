@@ -22,4 +22,9 @@ class DeckViewModel extends ChangeNotifier {
     _deckService.currentDeck = deck;
     notifyListeners();
   }
+
+  // get settings in constructor, to replace getting them in initState()
+  DeckViewModel() {
+    getDecks();
+  }
 }
