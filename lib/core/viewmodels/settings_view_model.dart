@@ -3,8 +3,8 @@ import 'package:planningpoker/core/services/SettingsService.dart';
 import 'package:planningpoker/locator.dart';
 
 class SettingsViewModel extends ChangeNotifier {
-  final SettingsService settingsService = locator<SettingsService>();
 
+  final SettingsService settingsService = locator<SettingsService>();
   bool keepScreenOn;
 
   getKeepScreenOn() async {

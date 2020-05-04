@@ -14,12 +14,6 @@ class _SettingsState extends State<Settings> {
 
   SettingsViewModel model = locator<SettingsViewModel>();
 
-  // get initial values for the preferences
-  @override
-  void initState() {
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<SettingsViewModel>(

@@ -20,13 +20,8 @@ class Main extends StatefulWidget {
 }
 
 class _MainAppState extends State<Main> {
-  DeckViewModel model = locator<DeckViewModel>();
 
-//  @override
-//  void initState() {
-////    model.getDecks();
-//    super.initState();
-//  }
+  DeckViewModel model = locator<DeckViewModel>();
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +33,6 @@ class _MainAppState extends State<Main> {
               title: 'PitechPlus Planning Poker',
                 home: Scaffold(
                   appBar: AppBar(
-
                     title:  Align(
                     alignment: Alignment.centerLeft,
                      child: Container(

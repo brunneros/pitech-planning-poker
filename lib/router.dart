@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:planningpoker/main.dart';
+import 'package:planningpoker/ui/deck_card.dart';
 import 'package:planningpoker/ui/settings.dart';
 
 class Router {
@@ -8,6 +9,9 @@ class Router {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(builder: (_) => Main());
+      case 'showcard':
+        final cardValue = settings.arguments;
+        return MaterialPageRoute(builder: (_) => DeckCard(cardValue: cardValue));
       case 'settings':
         return MaterialPageRoute(builder: (_) => Settings());
       default:
